@@ -25,7 +25,7 @@ for i in range(0,n):
    m=int(input("Required Quantity:")) 
    a.append(l)
    f.append(m)
-print("Stock Name:",a)
+# print("Stock Name:",a) 
 
 b = []
 for i in range(0,n):
@@ -47,29 +47,33 @@ for i in range(0,n):
 price = []    
 for i in range(0,n):
     price.append(b[i]*c[i]*d[i])
-print("Stock Prices Are:", price)
+# print("Stock Prices Are:", price)
 
 
 
-print("Quantities:", f)
+# print("Quantities:", f)
 
 Total = [] 
 for i in range(0,n):
     Total.append(price[i]*f[i])
-print("Total:",Total)
+# print("Total:",Total)
 
 e = []
 for i in range(0,n):
     record_four = mycollection.find_one({"Stock Name":a[i]},{"Total VAR":1,"_id":0})
     e.append(record_four.get("Total VAR")) 
-print("Total Var Values in %: ", e)
+# print("Total Var Values in %: ", e)
 
 
 Varvalue = []
 for  i in range(0,n):
     Varvalue.append(e[i]*Total[i])
-print("Var Values:",Varvalue)
-    
+# print("Var Values:",Varvalue)
+
+
+# print("SName   Price   Qunty    Total   Var(%)   VarValue")   
+for i in range(0,n):
+    print(a[i],"(SN)","   ",int(price[i]),"(P)","   ",f[i],"(Q)","   ",int(Total[i]),"(T)","   ",e[i],"(V%)","   ",int(Varvalue[i]),"(Vvalue)")
 
     
 
